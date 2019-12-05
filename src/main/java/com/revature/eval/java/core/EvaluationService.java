@@ -30,8 +30,8 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String acronym(String phrase) {
-		// TODO Write an implementation for this method declaration
-		return null;
+		String updated_phrase = phrase.replaceAll("\\B.|\\P{L}", "").toUpperCase();
+		return updated_phrase;
 	}
 
 	/**
@@ -84,17 +84,35 @@ public class EvaluationService {
 		}
 
 		public boolean isEquilateral() {
-			// TODO Write an implementation for this method declaration
+			Triangle triangle=new Triangle();
+
+			if((triangle.getSideOne()==triangle.getSideTwo())&&
+					(triangle.getSideTwo()==triangle.getSideThree())&&
+					(triangle.getSideThree()==triangle.getSideOne())){
+				return true;
+			}
 			return false;
 		}
 
 		public boolean isIsosceles() {
-			// TODO Write an implementation for this method declaration
+			Triangle triangle=new Triangle();
+
+			if ((triangle.getSideOne()==triangle.getSideTwo())||
+					(triangle.getSideTwo()==triangle.getSideThree())||
+					(triangle.getSideThree()==triangle.getSideOne())){
+				return true;
+			}
 			return false;
 		}
 
 		public boolean isScalene() {
-			// TODO Write an implementation for this method declaration
+			Triangle triangle=new Triangle();
+
+			if((triangle.getSideOne()!=triangle.getSideTwo())&&
+					(triangle.getSideTwo()!=triangle.getSideThree())&&
+					(triangle.getSideThree()!=triangle.getSideOne())){
+				return true;
+			}
 			return false;
 		}
 
@@ -116,8 +134,21 @@ public class EvaluationService {
 	 * @return
 	 */
 	public int getScrabbleScore(String string) {
-		// TODO Write an implementation for this method declaration
-		return 0;
+
+
+		int score = 0;
+		int string_length=string.length();
+
+
+		for(int i=0; i<string_length-1;i++){
+
+
+
+
+		}
+
+
+		return score;
 	}
 
 	/**
