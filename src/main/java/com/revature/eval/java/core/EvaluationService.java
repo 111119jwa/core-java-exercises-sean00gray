@@ -384,15 +384,15 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isArmstrongNumber(int input) {
-//		 int num =0;
-		 int tmp =0;
+		int num =0;
+		 int rem =0;
 		 int ttl=0;
+		 num = input;
+		while (num!=0){
 
-		while (input!=0){
-
-			tmp= input%10;
-			ttl= ttl+tmp*tmp*tmp;
-			input/=10;
+			rem= num%10 ;
+			ttl += Math.pow(rem,3) ;
+			num /= 10 ;
 
 		}
 
