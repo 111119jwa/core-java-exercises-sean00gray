@@ -333,8 +333,39 @@ public class EvaluationService {
 	 * @return
 	 */
 	public String toPigLatin(String string) {
-		// TODO Write an implementation for this method declaration
-		return null;
+
+		string=string.toLowerCase();
+		String string_array[]
+				= string.split(" ");
+
+		int size =string_array.length;
+
+		String modified_string="";
+
+		for (int i=0; i<size; i++){
+
+			if (string_array[i].startsWith("a")||
+					string_array[i].startsWith("e")||
+					string_array[i].startsWith("i")||
+					string_array[i].startsWith("o")||
+					string_array[i].startsWith("u")){
+
+
+				modified_string.concat(string_array[i].concat("ay"));
+			}else{
+				char chr1=string_array[i].charAt(0);
+				String st1= String.valueOf(chr1);
+
+				modified_string.concat(string_array[i].concat(st1+"ay"));
+
+				modified_string.replaceFirst(st1, "");
+			}
+		}
+
+
+
+
+		return modified_string;
 	}
 
 	/**
