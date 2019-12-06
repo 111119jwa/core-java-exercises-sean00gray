@@ -384,8 +384,28 @@ public class EvaluationService {
 	 * @return
 	 */
 	public boolean isArmstrongNumber(int input) {
-		// TODO Write an implementation for this method declaration
-		return false;
+//		 int num =0;
+		 int tmp =0;
+		 int ttl=0;
+
+		while (input!=0){
+
+			tmp= input%10;
+			ttl= ttl+tmp*tmp*tmp;
+			input/=10;
+
+		}
+
+		if (ttl==input){
+
+			return true;
+		}else{
+			return false;
+		}
+
+
+
+
 	}
 
 	/**
@@ -399,7 +419,12 @@ public class EvaluationService {
 	 * @return
 	 */
 	public List<Long> calculatePrimeFactorsOf(long l) {
-		// TODO Write an implementation for this method declaration
+
+		while (l%2==0)
+		{
+			l /= 2;
+		}
+
 		return null;
 	}
 
