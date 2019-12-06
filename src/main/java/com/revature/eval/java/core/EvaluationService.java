@@ -238,12 +238,23 @@ public class EvaluationService {
 	 */
 	public Map<String, Integer> wordCount(String string) {
 		Map<String,Integer> wordmap =new HashMap<>();
-		String string_array[] = string.split(" ");
+		String string_array[]
+				= string.split(" ");
+
+		int size = string_array.length;
+		for (int i=0; i<(size-1);i++ ){
+			if (wordmap.containsKey(string_array[i])){
+				wordmap.put(string_array[i],wordmap.get(string_array[i]+1));
+			}else {
+				wordmap.put(string_array[i], 1);
+			}
+		}
 
 
 
 
-		return
+
+		return wordmap;
 	}
 
 	/**
